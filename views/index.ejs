@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')%>
+    <title>Mongoose Store</title>
+</head>
+<header> <%- include('./partials/header.ejs')%></header>
+<body>
+    <ul>
+        <% products.forEach(product => { %>
+        <li><%=product.name%>
+        <a href=""><img src="<%=product.img%>"></a>
+        Price: <%=product.price%></li>
+        <% }) %>
+    </ul>
+</body>
+<footer><%- include('./partials/footer.ejs')%></footer>
+</html>

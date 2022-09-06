@@ -43,6 +43,13 @@ app.get('/product/seed', (req, res) => {
 });
 
 // Index
+app.get('/product', (req, res) => {
+	Product.find({}, (error, allProducts) => {
+		res.render('index.ejs', {
+			products: allProducts,
+		});
+	});
+});
 // New
 // Delete
 // Update
