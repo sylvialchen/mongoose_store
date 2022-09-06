@@ -6,10 +6,11 @@
 </head>
 <header> <%- include('./partials/header.ejs')%></header>
 <body>
+    <a href="/products/new">Add a New Product</a>
     <ul>
         <% products.forEach(product => { %>
         <li><%=product.name%>
-        <a href=""><img src="<%=product.img%>"></a>
+        <a href="/products/<%=product._id%>"><img src="<%=product.img%>"></a>
         Price: <%=product.price%></li>
         <% }) %>
     </ul>

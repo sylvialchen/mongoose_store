@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')%>
+    <title>Mongoose Store</title>
+</head>
+<header> <%- include('./partials/header.ejs')%></header>
+<body>
+    <a href="/products">Back to the Index Page</a>
+    <a href="">Edit this Product</a>
+        <h1><%=product.name%></h1>
+        <%=product.description%>
+        <img src="<%=product.img%>">
+        Price: <%=product.price%>
+        Quantity: <%=product.qty%>
+</body>
+<footer><%- include('./partials/footer.ejs')%></footer>
+</html>
