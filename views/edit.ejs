@@ -6,18 +6,27 @@
 </head>
 <header> <%- include('./partials/header.ejs')%></header>
 <body>
-    <label for="name">Product Name<input type ="text" value="<%=product.name%>">
-    <%=product.description%>
-    <img src="<%=product.img%>">
-    Price: <%=product.price%>
-    Quantity: 
-    <% if (product.qty <= 0 | !product.qty) {%>
-        Out of Stock
-    <% } else { %>
-        <%=product.qty%>
-    <% } %>
+    <body class="container">
+        <div class="row">
+        <div class="col s4">
+        <form action="/products/<%=product._id%>?_method=PUT" method="POST">
+            <label for="name">Product Name</label>
+            <input name="name" type ="text" value="<%=product.name%>">
 
-    <input type="submit" name="" value="Delete" /> 
+            <label for="description">Description:</label>
+            <input name="description" type ="text" value="<%=product.description%>">
+
+            <label for="img">Image URL:</label>
+            <input name="img" type ="text" value="<%=product.img%>">
+            
+            <label for="price">Price:</label>
+            <input name="price" type ="number" value="<%=product.label%>">
+
+            <label for="qty">Quantity:</label>
+            <input name="qty" type ="number" value="<%=product.qty%>">
+        
+            <input type="submit" name="" value="Update Product" /> 
+    </form>
 
 </body>
 <footer><%- include('./partials/footer.ejs')%></footer>
