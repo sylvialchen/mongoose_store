@@ -12,7 +12,16 @@
         <%=product.description%>
         <img src="<%=product.img%>">
         Price: <%=product.price%>
-        Quantity: <%=product.qty%>
+        Quantity: 
+        <% if (product.qty <= 0 | !product.qty) {%>
+            Out of Stock
+        <% } else { %>
+            <%=product.qty%>
+            <button>Buy</button>
+        <% } %>
+
+        <input type="button" name="" value="Delete" /> 
+        
 </body>
 <footer><%- include('./partials/footer.ejs')%></footer>
 </html>

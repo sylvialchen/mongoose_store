@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')%>
+    <title>Mongoose Store</title>
+</head>
+<header> <%- include('./partials/header.ejs')%></header>
+<body>
+    <label for="name">Product Name<input type ="text" value="<%=product.name%>">
+    <%=product.description%>
+    <img src="<%=product.img%>">
+    Price: <%=product.price%>
+    Quantity: 
+    <% if (product.qty <= 0 | !product.qty) {%>
+        Out of Stock
+    <% } else { %>
+        <%=product.qty%>
+    <% } %>
+
+    <input type="submit" name="" value="Delete" /> 
+
+</body>
+<footer><%- include('./partials/footer.ejs')%></footer>
+</html>

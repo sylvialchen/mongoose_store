@@ -52,21 +52,27 @@ app.get('/products', (req, res) => {
 });
 // New
 app.get('/products/new', (req, res) => {
-	res.send('hello');
+	res.render('new.ejs');
 });
 // Delete
 // Update
 // Create
 app.post('/products', (req, res) => {
     Product.create(req.body, (error, createdProduct) => {
-    res.send('information received');
+    res.redirect('/products');
 });
 });
 // Edit
+app.get("/products/:index/edit", (req, res) => {
+	res.render("edit.ejs", {
+
+    })
+});
+
 // Show
-app.get('/products/:id', (req, res) => {
+app.get("/products/:id", (req, res) => {
 	Product.findById(req.params.id, (err, foundProduct) => {
-		res.render('show.ejs', {
+		res.render("show.ejs", {
             product: foundProduct,
         })
 	});
