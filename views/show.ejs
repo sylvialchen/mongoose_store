@@ -16,8 +16,9 @@
         <img src="<%=product.img%>"><br>
         Price: <%=product.price%><br>
         Quantity: 
-        <% if (product.qty <= 0 | !product.qty) {%>
+        <% if (product.qty <= 0 | !product.qty | product.qty === "null" ) {%>
             Out of Stock
+            <input type="submit" value="BUY" disabled/>
         <% } else { %>
             <%=product.qty%>
         <form action="/products/<%=product._id%>/buy?_method=PUT" method="POST">

@@ -69,7 +69,7 @@ productRouter.put("/:id", (req, res) => {
 
 // Create
 productRouter.post('/', (req, res) => {
-    Product.create(req.body, (error, productBook) => {
+    Product.create(req.body, (error, foundProduct) => {
         res.redirect('/products');
     });
 });
