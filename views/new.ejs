@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('./partials/head.ejs')%>
-    <title>Mongoose Store</title>
+  <%- include('./partials/head.ejs')%>
+  <title>Mongoose Store</title>
 </head>
 <header> <%- include('./partials/header.ejs')%></header>
+
 <body class="container">
-    <div class="row">
+  <div class="row">
     <div class="col s4">
-    <form action="/products" method="POST">
-    <label for="name">Product Name:</label>
-        <input name="name" type ="text"><br>
+      <a href="/products">Back to the Index Page</a><br><br>
+      <form action="/products" method="POST">
+        <label for="name">Product Name:</label>
+        <input name="name" type="text"><br>
+        
         <label for="description">Description:</label>
-        <input name="description" type ="text"><br>
+        <input name="description" type="text"><br>
+        
         <label for="img">Image URL:</label>
-        <input name="img" type ="text"><br>
-    <label for="price">Price:</label>
-        <input name="price" type ="number" step="0.01"><br>
-    <label for="qty">Quantity:</label>
-        <input name="qty" type ="number" value="0"><br>
-    <input type="submit" name="" value="Create Product" /> 
-</form>
-</div>
+        <input name="img" type="text"><br>
+        
+        <label for="price">Price:</label>
+        <input name="price" type="number" step="0.01"><br>
+        
+        <label for="qty">Quantity:</label>
+        <input name="qty" type="number" value="0"><br>
+        
+        <input type="submit" name="" value="Create Product" />
+      </form>
+    </div>
 </body>
 <footer><%- include('./partials/footer.ejs')%></footer>
+
 </html>

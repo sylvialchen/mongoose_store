@@ -5,23 +5,29 @@
     <title>Mongoose Store</title>
 </head>
 <header> <%- include('./partials/header.ejs')%></header>
-<body>
-    <a href="/products">Back to the Index Page</a>
-    <a href="">Edit this Product</a>
-        <h1><%=product.name%></h1>
-        <%=product.description%>
-        <img src="<%=product.img%>">
-        Price: <%=product.price%>
+    <body class="container">
+        <div class="row">
+        <div class="col s10">
+    <a href="/products">Back to the Index Page</a><br>
+    <a href="/products/<%=product._id%>/edit">Edit this Product</a><br>
+    <div id="showPage"  class="col s4 offset-s4">
+    <h2><%=product.name%></h2>
+        <%=product.description%><br>
+        <img src="<%=product.img%>"><br>
+        Price: <%=product.price%><br>
         Quantity: 
         <% if (product.qty <= 0 | !product.qty) {%>
             Out of Stock
         <% } else { %>
             <%=product.qty%>
-            <button>Buy</button>
+        <form action="/products/<%=product._id%>/buy?_method=PUT" method="POST">
+            <input type="submit" value="BUY" />
+            </form>
         <% } %>
-
-        <input type="button" name="" value="Delete" /> 
-        
+        <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE" />
+          </form>
+        </div></div></div>
 </body>
 <footer><%- include('./partials/footer.ejs')%></footer>
 </html>

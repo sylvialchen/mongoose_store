@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('./partials/head.ejs')%>
-    <title>Mongoose Store</title>
+  <%- include('./partials/head.ejs')%>
+  <title>Mongoose Store</title>
 </head>
 <header> <%- include('./partials/header.ejs')%></header>
+
 <body>
-    <body class="container">
-        <div class="row">
-        <div class="col s4">
+
+  <body class="container">
+    <div class="row">
+      <div class="col s4">
+        <a href="/products">Back to the Index Page</a><br><br>
         <form action="/products/<%=product._id%>?_method=PUT" method="POST">
-            <label for="name">Product Name</label>
-            <input name="name" type ="text" value="<%=product.name%>">
+          <label for="name">Product Name</label>
+          <input name="name" type="text" value="<%=product.name%>">
 
-            <label for="description">Description:</label>
-            <input name="description" type ="text" value="<%=product.description%>">
+          <label for="description">Description:</label>
+          <input name="description" type="text" value="<%=product.description%>">
 
-            <label for="img">Image URL:</label>
-            <input name="img" type ="text" value="<%=product.img%>">
-            
-            <label for="price">Price:</label>
-            <input name="price" type ="number" value="<%=product.label%>">
+          <label for="img">Image URL:</label>
+          <input name="img" type="text" value="<%=product.img%>">
 
-            <label for="qty">Quantity:</label>
-            <input name="qty" type ="number" value="<%=product.qty%>">
-        
-            <input type="submit" name="" value="Update Product" /> 
-    </form>
+          <label for="price">Price:</label>
+          <input name="price" type="number" value="<%=product.label%>">
 
-</body>
-<footer><%- include('./partials/footer.ejs')%></footer>
+          <label for="qty">Quantity:</label>
+          <input name="qty" type="number" value="<%=product.qty%>">
+
+          <input type="submit" name="" value="Update Product" />
+        </form>
+
+  </body>
+  <footer><%- include('./partials/footer.ejs')%></footer>
+
 </html>

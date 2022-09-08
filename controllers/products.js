@@ -37,6 +37,21 @@ productRouter.delete("/:id", (req, res) => {
   });
 
 // Update
+productRouter.put("/:id/buy", (req, res) => {  
+    Product.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      },
+      (error, updatedProduct) => {
+        updatedProduct.qty -= 1;
+        updatedProduct.save();
+        res.redirect(`/products/${req.params.id}`)
+      }
+    )
+  })
+
 productRouter.put("/:id", (req, res) => {  
     Product.findByIdAndUpdate(
       req.params.id,
@@ -45,10 +60,12 @@ productRouter.put("/:id", (req, res) => {
         new: true,
       },
       (error, updatedProduct) => {
-        res.redirect(`./${req.params.id}`)
+        res.redirect(`/products/${req.params.id}`)
       }
     )
   })
+
+
 
 // Create
 productRouter.post('/', (req, res) => {
